@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detectando EPIS - Stream</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #d6eaff; /* Fundo azul-claro */
+            padding: 20px;
+        }
+        h1 {
+            color: #004080; /* Azul mais escuro para o título */
+        }
+        h3 {
+            color: #0056b3; /* Azul intermediário para subtítulo */
+        }
+        a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        a:hover {
+            background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <h1>Detectando EPIs - FastProBR - Stream</h1>
+    <h3>{{ "Usando Webcam" if mode == "webcam" else "Usando Vídeo" }}</h3>
+    <div>
+        <img src="/video_feed" style="max-width: 100%; height: auto;" alt="YOLO Stream">
+    </div>
+    <br>
+    <a href="/">Voltar</a>
+</body>
+</html>
