@@ -2,11 +2,24 @@ from flask import Flask, render_template, Response, request
 from ultralytics import YOLO
 import cv2
 import os
+import requests
 
 app = Flask(__name__)
 
+# URL do modelo YOLO hospedado no GitHub
+MODEL_URL = "https://github.com/JLeoBRx/ReconhecendoEPIcomIA/raw/main/best.pt"
+MODEL_PATH = "best.pt"
+
+# Baixar o modelo do GitHub se não estiver presente
+if not os.path.exists(MODEL_PATH):
+    print("Baixando o modelo YOLO...")
+    response = requests.get(MODEL_URL)
+    with open(MODEL_PATH, "wb") as f:
+        f.write(response.content)
+    print("Modelo baixado com sucesso!")
+
 # Inicialize o modelo YOLO
-model = YOLO("best.pt")
+model = YOLO(MODEL_PATH)
 
 # Diretórios de saída
 UPLOAD_FOLDER = "static/output"
@@ -91,5 +104,6 @@ def process():
     return "Opção inválida!"
 
 
-# Para Vercel, não use app.run()
-app = app
+if __name__ == "__main__":
+    # Use app.run para rodar localmente ou durante testes
+    app.run(debug=True)
