@@ -91,5 +91,5 @@ def process():
     return "Opção inválida!"
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# Para Vercel, não use app.run()
+app = app
