@@ -35,9 +35,11 @@ source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate  # Windows
 Instale as dependências: Certifique-se de que o arquivo requirements.txt está no diretório principal e execute:
 
+
 bash
 Copiar código
 pip install -r requirements.txt
+
 Modelo YOLO:
 
 Baixe o modelo pré-treinado YOLO (best.pt) e coloque no caminho configurado no código: C:\yolo\best.pt.
