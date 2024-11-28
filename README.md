@@ -1,5 +1,7 @@
 Reconhecimento de EPI com IA
+
 Video Demo: https://youtu.be/piYG6buCN8Q
+
 Descrição:
 Este projeto é um software que utiliza Inteligência Artificial (IA) para reconhecer Equipamentos de Proteção Individual (EPI) em imagens, vídeos ou via webcam em tempo real. Ele foi desenvolvido em Python 3.11.4 com o framework PyQt5 para interface gráfica e utiliza o modelo YOLO para a detecção. Este software permite a seleção de diferentes fontes de entrada (imagem, vídeo ou webcam) e realiza a detecção de EPIs com precisão, exibindo os resultados na interface.
 
@@ -8,6 +10,7 @@ Detecção de EPIs em Imagens: Carregue uma imagem no formato JPG, PNG ou JPEG e
 Detecção de EPIs em Vídeos: Analise vídeos em tempo real para reconhecer os EPIs em cada quadro.
 Detecção via Webcam: Utilize a câmera do computador para a detecção em tempo real.
 Interface Simples e Intuitiva: Desenvolvida com PyQt5, permite fácil navegação e uso por qualquer pessoa.
+
 Tecnologias Utilizadas:
 Python 3.11.4: Linguagem principal para o desenvolvimento do software.
 Node.js 18.20.4: Utilizado como ambiente para bibliotecas e frameworks, se necessário.
@@ -15,6 +18,7 @@ PyQt5: Para construção da interface gráfica.
 YOLO (You Only Look Once): Para a detecção e reconhecimento de objetos.
 OpenCV: Para manipulação de vídeos e imagens.
 Ultralytics: Biblioteca que fornece suporte ao modelo YOLO.
+
 Instalação e Configuração:
 Clone o repositório:
 
