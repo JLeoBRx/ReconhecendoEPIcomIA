@@ -8,11 +8,11 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #d6eaff; /* Fundo azul-claro */
+            background-color: #d6eaff;
             padding: 20px;
         }
         h1 {
-            color: #004080; /* Azul mais escuro para o título */
+            color: #004080;
         }
         button {
             padding: 10px 20px;
@@ -23,7 +23,44 @@
             cursor: pointer;
         }
         button:hover {
-            background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+            background-color: #0056b3;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            margin: 10% auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            width: 80%;
+            text-align: center;
+        }
+        .modal img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: red;
         }
     </style>
 </head>
@@ -50,9 +87,36 @@
         </button>
     </form>
 
-    {% if output_file %}
-    <h2>Resultado:</h2>
-    <img src="{{ output_file }}" alt="Resultado" style="max-width: 100%; height: auto;">
-    {% endif %}
+    <!-- Modal -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="resultImage" src="" alt="Resultado">
+        </div>
+    </div>
+
+    <script>
+        // Abre o modal com a imagem processada
+        function openModal(imageSrc) {
+            const modal = document.getElementById("resultModal");
+            const modalImage = document.getElementById("resultImage");
+            modalImage.src = imageSrc;
+            modal.style.display = "block";
+        }
+
+        // Fecha o modal
+        function closeModal() {
+            const modal = document.getElementById("resultModal");
+            modal.style.display = "none";
+        }
+
+        // Fechar modal ao clicar fora dele
+        window.onclick = function(event) {
+            const modal = document.getElementById("resultModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

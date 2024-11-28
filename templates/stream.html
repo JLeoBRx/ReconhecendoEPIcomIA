@@ -3,41 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detectando EPIS - Stream</title>
+    <title>Stream</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #d6eaff; /* Fundo azul-claro */
+            background-color: #d6eaff;
             padding: 20px;
         }
         h1 {
-            color: #004080; /* Azul mais escuro para o título */
+            color: #004080;
         }
-        h3 {
-            color: #0056b3; /* Azul intermediário para subtítulo */
+        img {
+            max-width: 50%; /* Reduz o tamanho do vídeo */
+            height: auto;
+            border: 2px solid #004080;
+            border-radius: 10px;
         }
-        a {
-            text-decoration: none;
+        button {
             padding: 10px 20px;
             background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
+            cursor: pointer;
         }
-        a:hover {
-            background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>Detectando EPIs - FastProBR - Stream</h1>
-    <h3>{{ "Usando Webcam" if mode == "webcam" else "Usando Vídeo" }}</h3>
-    <div>
-        <img src="/video_feed" style="max-width: 100%; height: auto;" alt="YOLO Stream">
-    </div>
-    <br>
-    <a href="/">Voltar</a>
+    <h1>Streaming</h1>
+    <img src="/video_feed" alt="Streaming de vídeo ao vivo">
+    <br><br>
+    <button onclick="window.location.href='/'">Voltar</button>
 </body>
 </html>
